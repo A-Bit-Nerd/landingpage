@@ -64,10 +64,10 @@ export default function CryptoPage() {
         </a>
         <a
           className="nerd-btn nerd-btn-secondary"
-          href="/escape-room"
-          aria-label="Explorar Escape Room"
+          href="/manifest"
+          aria-label="Explorar Manifiesto"
         >
-          🔐 Explorar Escape Room
+          📜 Explorar Manifiesto
         </a>
       </nav>
     </>

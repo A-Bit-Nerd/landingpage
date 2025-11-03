@@ -1,0 +1,16 @@
+{
+  "name": "A Bit Nerd",
+  "short_name": "A Bit Nerd",
+  "description": "Comunidad nerd que celebra la curiosidad",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

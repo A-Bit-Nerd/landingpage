@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Bit Nerd — Página en construcción</title>
+  <meta name="description" content="A Bit Nerd: comunidad nerd que celebra la curiosidad. Muy pronto, la landing completa. Sumate y sé parte." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="A Bit Nerd — Página en construcción" />
+  <meta property="og:description" content="Comunidad nerd/geek de tu ciudad. Charlas, club, mentorías y más. ¿Listx para presionar START?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root {
+      --bg: #0b1020;      /* noche */
+      --panel: #0f1530;   /* panel */
+      --text: #e5e7eb;    /* gris claro */
+      --muted: #94a3b8;   /* gris azulado */
+      --primary: #7c3aed; /* violeta (branding sugerido) */
+      --accent: #f59e0b;  /* amarillo (branding sugerido) */
+      --ok: #10b981;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 80% -10%, #161d3a 0%, var(--bg) 55%),
+                  radial-gradient(600px 400px at -10% 110%, #1b2347 0%, transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(960px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      overflow: hidden;
+    }
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text);
+    }
+    .logo {
+      width: 40px; height: 40px; border-radius: 12px; background:
+        conic-gradient(from 180deg at 50% 50%, var(--accent), var(--primary));
+      box-shadow: 0 6px 16px rgba(124,58,237,0.5);
+    }
+    .brand span { font-weight: 700; letter-spacing: 0.2px; }
+
+    .hero { padding: 48px 24px 8px; text-align: center; }
+    .kicker { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; }
+    h1 { margin: 10px 0 16px; font-size: clamp(28px, 5vw, 48px); line-height: 1.05; }
+    .sub { color: var(--muted); font-size: clamp(14px, 2.2vw, 18px); max-width: 760px; margin: 0 auto; }
+
+    .terminal {
+      margin: 28px auto 0; width: min(780px, 92%);
+      background: #0a0f1f; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
+    }
+    .term-head{ display:flex; align-items:center; gap:8px; padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .dot{ width:10px; height:10px; border-radius:999px; }
+    .dot.red{ background:#ef4444 } .dot.yellow{ background:#f59e0b } .dot.green{ background:#10b981 }
+    .term-body{ padding:16px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 14px; line-height:1.6; }
+    .prompt{ color:#22d3ee }
+    .type { display:inline-block; border-right: 2px solid var(--ok); white-space: nowrap; overflow: hidden; animation: typing 4s steps(36,end), blink 0.8s step-end infinite; }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { 50% { border-color: transparent } }
+
+    .cta { display:flex; flex-wrap: wrap; gap: 12px; justify-content: center; padding: 28px 20px 40px; }
+    .btn { appearance:none; border:none; cursor:pointer; text-decoration:none; color:#0b1020; background: var(--accent); padding: 12px 18px; border-radius: 999px; font-weight: 700; box-shadow: 0 6px 20px rgba(245,158,11,.3); transition: transform .12s ease, box-shadow .2s ease; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(245,158,11,.45); }
+    .btn.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.18); box-shadow: none; }
+
+    .links { display:flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 0 18px 28px; color: var(--muted); font-size: 14px; }
+    .links a { color: var(--text); opacity: .9; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,.25); }
+
+    footer { padding: 16px 20px; color: var(--muted); text-align: center; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    /* Responsive polish */
+    @media (max-width: 420px){ .btn{ width:100%; text-align:center; } }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="header">
+      <a class="brand" href="#" aria-label="A Bit Nerd — inicio">
+        <div class="logo" aria-hidden="true"></div>
+        <span>A Bit Nerd</span>
+      </a>
+      <span style="color: var(--muted); font-size: 12px;">v0.1 • En construcción</span>
+    </div>
+
+    <section class="hero" aria-labelledby="tit">
+      <div class="kicker">Comunidad nerd</div>
+      <h1 id="tit">Estamos inicializando la nave 🚀</h1>
+      <p class="sub">Muy pronto lanzamos la landing. Mientras tanto, abrimos la puerta para que te sumes: un lugar seguro e inclusivo donde la curiosidad y las pasiones nerd crecen en comunidad.</p>
+
+      <div class="terminal" aria-label="Consola de estado">
+        <div class="term-head">
+          <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+        </div>
+        <div class="term-body">
+          <div><span class="prompt">$</span> <span class="type">Initializing A Bit Nerd... OK</span></div>
+          <div><span class="prompt">$</span> loading modules: community, talks, mentoring, memes... <span style="color:var(--ok)">ready</span></div>
+          <div><span class="prompt">$</span> press <strong>START</strong> to join →</div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="cta" aria-label="Acciones principales">
+      <!-- Reemplazá los href con tus links reales -->
+      <a class="btn" href="https://discord.gg/tu-invitacion" target="_blank" rel="noopener" aria-label="Sumarme al Discord">Sumarme al Discord</a>
+      <a class="btn secondary" href="https://t.me/tu-grupo" target="_blank" rel="noopener" aria-label="Canal de Telegram">Canal de Telegram</a>
+      <a class="btn secondary" href="https://forms.gle/tu-form" target="_blank" rel="noopener" aria-label="Suscribirme al newsletter">Suscribirme</a>
+      <a class="btn secondary" href="/manifiesto.html" aria-label="Leer el manifiesto">Leer manifiesto</a>
+      <a class="btn secondary" href="mailto:hola@abitnerd.io?subject=Quiero%20sumarme%20a%20A%20Bit%20Nerd" aria-label="Escribirnos por email">Escribirnos</a>
+    </nav>
+
+    <div class="links" aria-label="Redes sociales">
+      <span>Seguinos:</span>
+      <a href="https://instagram.com/abitnerd" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      <span>·</span>
+      <a href="https://x.com/abitnerd" target="_blank" rel="noopener" aria-label="X (Twitter)">X</a>
+      <span>·</span>
+      <a href="https://tiktok.com/@abitnerd" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
+      <span>·</span>
+      <a href="https://github.com/abitnerd" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> A Bit Nerd · Hecho con ♥ desde la comunidad. · <a style="color:inherit" href="#" aria-label="Accesibilidad">Accesibilidad</a></div>
+    </footer>
+  </main>
+
+  <script>
+    // Año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

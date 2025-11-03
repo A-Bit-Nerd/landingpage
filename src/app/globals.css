@@ -1,0 +1,550 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+      Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, 'Apple Color Emoji',
+      'Segoe UI Emoji';
+    background: theme('backgroundImage.nerd-gradient');
+    color: theme('colors.nerd-text');
+  }
+}
+
+@layer components {
+  .nerd-card {
+    @apply w-full max-w-4xl bg-gradient-to-b from-white/[0.04] to-white/[0.02] border border-white/[0.08] rounded-3xl shadow-2xl overflow-hidden;
+  }
+
+  .nerd-header {
+    @apply flex items-center justify-between p-5 border-b border-white/[0.06] backdrop-blur-sm relative;
+  }
+
+  .nerd-brand {
+    @apply inline-flex items-center gap-3 text-nerd-text no-underline;
+  }
+
+  .nerd-logo {
+    @apply w-10 h-10 rounded-xl bg-gradient-to-br from-nerd-accent to-nerd-primary shadow-lg;
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.5);
+  }
+
+  .nerd-hero {
+    @apply p-12 pt-12 pb-2 text-center;
+  }
+
+  .nerd-kicker {
+    @apply text-nerd-accent font-bold uppercase tracking-wider text-xs;
+  }
+
+  .nerd-title {
+    @apply my-2.5 mb-4 text-4xl md:text-5xl leading-tight;
+  }
+
+  .nerd-subtitle {
+    @apply text-nerd-muted text-sm md:text-lg max-w-3xl mx-auto;
+  }
+
+  .nerd-terminal {
+    @apply mx-auto mt-7 w-full max-w-3xl bg-nerd-bg border border-white/[0.08] rounded-2xl;
+  }
+
+  .nerd-term-head {
+    @apply flex items-center gap-2 p-2.5 px-3 border-b border-white/[0.06];
+  }
+
+  .nerd-dot {
+    @apply w-2.5 h-2.5 rounded-full;
+  }
+
+  .nerd-dot-red {
+    @apply bg-red-500;
+  }
+
+  .nerd-dot-yellow {
+    @apply bg-nerd-accent;
+  }
+
+  .nerd-dot-green {
+    @apply bg-nerd-ok;
+  }
+
+  .nerd-term-body {
+    @apply p-4 font-mono text-sm leading-relaxed;
+  }
+
+  .nerd-prompt {
+    @apply text-nerd-cyan;
+  }
+
+  .nerd-type {
+    @apply inline-block border-r-2 border-nerd-ok whitespace-nowrap overflow-hidden;
+    animation: typing 4s steps(36, end), blink 0.8s step-end infinite;
+  }
+
+  .nerd-cta {
+    @apply flex flex-wrap gap-4 justify-center p-8 px-6 pb-12;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .nerd-btn {
+    @apply appearance-none border-none cursor-pointer no-underline text-nerd-bg bg-nerd-accent py-3 px-6 rounded-lg font-bold shadow-lg transition-all duration-200 relative overflow-hidden;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .nerd-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .nerd-btn:hover::before {
+    left: 100%;
+  }
+
+  .nerd-btn:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .nerd-btn-secondary {
+    @apply bg-nerd-panel/20 text-nerd-text border-2 border-nerd-accent/30 shadow-none backdrop-blur-sm;
+    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.1);
+  }
+
+  .nerd-btn-secondary:hover {
+    @apply border-nerd-accent/60 bg-nerd-accent/10;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15),
+      0 0 0 1px rgba(245, 158, 11, 0.3);
+  }
+
+  .nerd-links {
+    @apply flex flex-wrap gap-2.5 justify-center pb-7 text-nerd-muted text-sm;
+  }
+
+  .nerd-links a {
+    @apply text-nerd-text opacity-90 no-underline border-b border-dashed border-white/25;
+  }
+
+  .nerd-footer {
+    @apply border-t border-white/[0.06] bg-nerd-panel/20;
+  }
+
+  .nerd-footer-content {
+    @apply max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-3 gap-8;
+  }
+
+  .nerd-footer-section {
+    @apply text-center md:text-left;
+  }
+
+  .nerd-footer-title {
+    @apply text-xl font-bold text-nerd-text mb-3;
+  }
+
+  .nerd-footer-subtitle {
+    @apply text-sm font-bold text-nerd-accent mb-3 uppercase tracking-wider;
+  }
+
+  .nerd-footer-desc {
+    @apply text-nerd-muted text-sm leading-relaxed;
+  }
+
+  .nerd-footer-links {
+    @apply flex flex-col gap-2;
+  }
+
+  .nerd-footer-link {
+    @apply text-nerd-muted text-sm hover:text-nerd-accent transition-colors duration-200 no-underline;
+  }
+
+  .nerd-footer-bottom {
+    @apply border-t border-white/[0.06] px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-nerd-muted text-xs;
+  }
+
+  .nerd-footer-legal {
+    @apply flex items-center gap-2;
+  }
+
+  .nerd-nav {
+    @apply flex items-center gap-6;
+  }
+
+  .nerd-nav-link {
+    @apply text-nerd-text hover:text-nerd-accent transition-colors duration-200 no-underline;
+  }
+
+  .nerd-nav-link.active {
+    @apply text-nerd-accent;
+  }
+
+  .nerd-nav-toggle {
+    @apply bg-transparent border-none text-nerd-text cursor-pointer p-2 hover:text-nerd-accent transition-colors duration-200;
+  }
+
+  .nerd-mobile-nav {
+    @apply absolute top-full left-0 right-0 bg-nerd-bg/95 backdrop-blur-sm border-t border-white/[0.08] z-50;
+  }
+
+  .nerd-mobile-nav-content {
+    @apply flex flex-col p-4 gap-2;
+  }
+
+  .nerd-mobile-nav-link {
+    @apply flex items-center text-nerd-text hover:text-nerd-accent transition-colors duration-200 no-underline p-3 rounded-lg hover:bg-white/[0.05];
+  }
+
+  .nerd-mobile-nav-link.active {
+    @apply text-nerd-accent bg-white/[0.05];
+  }
+
+  .nerd-btn-small {
+    @apply bg-nerd-accent text-nerd-bg px-4 py-2 rounded-full text-sm font-bold hover:bg-nerd-accent/90 transition-colors duration-200;
+  }
+
+  .nerd-stats {
+    @apply flex flex-wrap justify-center gap-8 mt-12 mb-8;
+  }
+
+  .nerd-stat {
+    @apply text-center;
+  }
+
+  .nerd-stat-number {
+    @apply text-3xl font-bold text-nerd-green mb-2;
+  }
+
+  .nerd-stat-label {
+    @apply text-nerd-muted text-sm uppercase tracking-wider;
+  }
+
+  .nerd-features {
+    @apply py-16 px-8;
+  }
+
+  .nerd-section-title {
+    @apply text-3xl font-bold text-nerd-green text-center mb-12;
+  }
+
+  .nerd-features-grid {
+    @apply grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto;
+  }
+
+  .nerd-feature {
+    @apply text-center p-6 bg-nerd-panel/30 border border-white/10 rounded-2xl hover:border-nerd-accent/30 transition-all duration-300;
+  }
+
+  .nerd-feature-icon {
+    @apply text-4xl mb-4;
+  }
+
+  .nerd-feature-title {
+    @apply text-xl font-bold text-nerd-text mb-3;
+  }
+
+  .nerd-feature-desc {
+    @apply text-nerd-muted text-sm leading-relaxed;
+  }
+
+  .nerd-sponsors {
+    @apply py-16 px-8 bg-nerd-panel/10;
+  }
+
+  .nerd-sponsors-container {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .nerd-sponsors-subtitle {
+    @apply text-nerd-muted text-center mb-12 max-w-2xl mx-auto;
+  }
+
+  .nerd-sponsors-tier {
+    @apply mb-12;
+  }
+
+  .nerd-sponsors-tier-title {
+    @apply text-xl font-bold text-center mb-6 uppercase tracking-wider;
+  }
+
+  .nerd-sponsors-tier-title.gold {
+    @apply text-nerd-accent;
+  }
+
+  .nerd-sponsors-tier-title.silver {
+    @apply text-nerd-cyan;
+  }
+
+  .nerd-sponsors-tier-title.bronze {
+    @apply text-nerd-yellow;
+  }
+
+  .nerd-sponsors-grid {
+    @apply grid gap-6 justify-center;
+  }
+
+  .nerd-sponsors-grid.gold {
+    @apply md:grid-cols-2 max-w-4xl mx-auto;
+  }
+
+  .nerd-sponsors-grid.silver {
+    @apply md:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto;
+  }
+
+  .nerd-sponsors-grid.bronze {
+    @apply grid-cols-2 md:grid-cols-4 max-w-5xl mx-auto;
+  }
+
+  .nerd-sponsor-card {
+    @apply bg-nerd-panel/30 border border-white/10 rounded-2xl p-6 text-center transition-all duration-300 hover:border-nerd-accent/30 hover:-translate-y-1 relative;
+  }
+
+  .nerd-sponsor-card.gold {
+    @apply border-nerd-accent/30 bg-gradient-to-b from-nerd-accent/5 to-transparent;
+  }
+
+  .nerd-sponsor-card.silver {
+    @apply border-nerd-cyan/30 bg-gradient-to-b from-nerd-cyan/5 to-transparent;
+  }
+
+  .nerd-sponsor-card.bronze {
+    @apply border-nerd-yellow/30 bg-gradient-to-b from-nerd-yellow/5 to-transparent;
+  }
+
+  .nerd-sponsor-logo {
+    @apply text-4xl mb-4;
+  }
+
+  .nerd-sponsor-card.gold .nerd-sponsor-logo {
+    @apply text-5xl;
+  }
+
+  .nerd-sponsor-name {
+    @apply text-lg font-bold text-nerd-text mb-2;
+  }
+
+  .nerd-sponsor-card.gold .nerd-sponsor-name {
+    @apply text-xl;
+  }
+
+  .nerd-sponsor-desc {
+    @apply text-nerd-muted text-sm;
+  }
+
+  .nerd-sponsor-badge {
+    @apply absolute -top-2 -right-2 bg-nerd-accent text-nerd-bg text-xs font-bold px-2 py-1 rounded-full;
+  }
+
+  .nerd-sponsors-cta {
+    @apply text-center mt-16 p-8 bg-gradient-to-r from-nerd-primary/10 to-nerd-accent/10 border border-white/10 rounded-3xl;
+  }
+
+  .nerd-sponsors-cta-title {
+    @apply text-2xl font-bold text-nerd-text mb-4;
+  }
+
+  .nerd-sponsors-cta-desc {
+    @apply text-nerd-muted mb-6 max-w-2xl mx-auto;
+  }
+
+  .nerd-donations {
+    @apply py-16 px-8 bg-gradient-to-b from-nerd-primary/5 to-nerd-accent/5;
+  }
+
+  .nerd-donations-container {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .nerd-donations-subtitle {
+    @apply text-nerd-muted text-center mb-12 max-w-2xl mx-auto;
+  }
+
+  .nerd-donation-amounts {
+    @apply mb-12;
+  }
+
+  .nerd-donation-amounts-title {
+    @apply text-lg font-bold text-nerd-text text-center mb-6;
+  }
+
+  .nerd-donation-amounts-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto;
+  }
+
+  .nerd-donation-amount {
+    @apply flex flex-col items-center p-4 bg-nerd-panel/30 border border-white/10 rounded-xl hover:border-nerd-accent/30 transition-all duration-300 cursor-pointer;
+  }
+
+  .nerd-donation-emoji {
+    @apply text-2xl mb-2;
+  }
+
+  .nerd-donation-price {
+    @apply text-xl font-bold text-nerd-accent;
+  }
+
+  .nerd-donation-label {
+    @apply text-xs text-nerd-muted mt-1;
+  }
+
+  .nerd-donations-tabs {
+    @apply mb-12;
+  }
+
+  .nerd-tabs-header {
+    @apply flex justify-center mb-8 bg-nerd-panel/20 rounded-full p-1 max-w-md mx-auto;
+  }
+
+  .nerd-tab {
+    @apply flex-1 py-3 px-6 text-sm font-bold rounded-full transition-all duration-300 border-none cursor-pointer;
+  }
+
+  .nerd-tab:not(.active) {
+    @apply text-nerd-muted bg-transparent hover:text-nerd-text;
+  }
+
+  .nerd-tab.active {
+    @apply text-nerd-bg bg-nerd-accent shadow-lg;
+  }
+
+  .nerd-tab-content {
+    @apply bg-nerd-panel/30 border border-white/10 rounded-2xl p-8;
+  }
+
+  .nerd-payment-methods {
+    @apply grid md:grid-cols-3 gap-6;
+  }
+
+  .nerd-payment-method {
+    @apply flex flex-col items-center p-6 bg-nerd-bg/50 border border-white/10 rounded-xl hover:border-nerd-accent/30 transition-all duration-300 no-underline hover:-translate-y-1;
+  }
+
+  .nerd-payment-method.paypal:hover {
+    @apply border-blue-400/50;
+  }
+
+  .nerd-payment-method.kofi:hover {
+    @apply border-red-400/50;
+  }
+
+  .nerd-payment-method.mercadopago:hover {
+    @apply border-blue-500/50;
+  }
+
+  .nerd-payment-icon {
+    @apply text-3xl mb-3;
+  }
+
+  .nerd-payment-info h4 {
+    @apply text-lg font-bold text-nerd-text mb-1;
+  }
+
+  .nerd-payment-info p {
+    @apply text-sm text-nerd-muted text-center;
+  }
+
+  .nerd-crypto-methods {
+    @apply space-y-6;
+  }
+
+  .nerd-crypto-method {
+    @apply bg-nerd-bg/50 border border-white/10 rounded-xl p-6;
+  }
+
+  .nerd-crypto-header {
+    @apply flex items-center gap-3 mb-4;
+  }
+
+  .nerd-crypto-icon {
+    @apply text-2xl;
+  }
+
+  .nerd-crypto-name {
+    @apply text-lg font-bold text-nerd-text;
+  }
+
+  .nerd-crypto-address {
+    @apply flex gap-2;
+  }
+
+  .nerd-address-input {
+    @apply flex-1 bg-nerd-panel/50 border border-white/20 rounded-lg px-4 py-2 text-nerd-text font-mono text-sm;
+  }
+
+  .nerd-copy-btn {
+    @apply bg-nerd-accent text-nerd-bg px-4 py-2 rounded-lg font-bold hover:bg-nerd-accent/90 transition-colors duration-200 border-none cursor-pointer;
+  }
+
+  .nerd-crypto-note {
+    @apply mt-6 p-4 bg-nerd-accent/10 border border-nerd-accent/20 rounded-lg;
+  }
+
+  .nerd-crypto-note p {
+    @apply text-sm text-nerd-text m-0;
+  }
+
+  .nerd-donations-thanks {
+    @apply text-center p-8 bg-gradient-to-r from-nerd-green/10 to-nerd-cyan/10 border border-white/10 rounded-2xl;
+  }
+
+  .nerd-donations-thanks h3 {
+    @apply text-xl font-bold text-nerd-green mb-4;
+  }
+
+  .nerd-donations-thanks p {
+    @apply text-nerd-muted leading-relaxed;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 420px) {
+  .nerd-btn {
+    @apply w-full text-center;
+    min-width: unset;
+    padding: 12px 20px;
+  }
+
+  .nerd-cta {
+    @apply gap-3 p-6 px-4 pb-8;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+  .nerd-btn {
+    min-width: 160px;
+    padding: 10px 24px;
+  }
+}

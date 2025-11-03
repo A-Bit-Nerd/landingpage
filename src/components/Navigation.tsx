@@ -6,11 +6,11 @@ import { useState } from 'react';
 
 const navigationItems = [
   { href: '/', label: 'Home', icon: '🏠' },
-  { href: '/manifiesto', label: 'Manifiesto', icon: '📜' },
+  { href: '/manifest', label: 'Manifiesto', icon: '📜' },
   { href: '/wellbeing', label: 'Bienestar', icon: '🧘' },
+  { href: '/entertainment', label: 'Entretenimiento', icon: '🎮' },
   { href: '/programming', label: 'Programación', icon: '💻' },
   { href: '/crypto', label: 'Crypto', icon: '₿' },
-  { href: '/escape-room', label: 'Escape Room', icon: '🔐' },
 ];
 
 export default function Navigation() {

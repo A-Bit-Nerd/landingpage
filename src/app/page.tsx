@@ -74,7 +74,7 @@ export default function HomePage() {
         </a>
         <Link
           className="nerd-btn nerd-btn-secondary"
-          href="/manifiesto"
+          href="/manifest"
           aria-label="Conoce nuestros valores"
         >
           📜 Nuestro Manifiesto

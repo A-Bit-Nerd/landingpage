@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="nerd-footer-section">
           <h4 className="nerd-footer-subtitle">Enlaces</h4>
           <div className="nerd-footer-links">
-            <a href="/manifiesto" className="nerd-footer-link">
+            <a href="/manifest" className="nerd-footer-link">
               Manifiesto
             </a>
             <a href="/mision" className="nerd-footer-link">

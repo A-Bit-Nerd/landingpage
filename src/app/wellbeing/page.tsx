@@ -64,10 +64,10 @@ export default function WellbeingPage() {
         </a>
         <a
           className="nerd-btn nerd-btn-secondary"
-          href="/programming"
-          aria-label="Explorar Programación"
+          href="/entertainment"
+          aria-label="Explorar Entretenimiento"
         >
-          � Explorar Programación
+          🎮 Explorar Entretenimiento
         </a>
       </nav>
     </>

@@ -10,6 +10,8 @@ Una landing page moderna para la comunidad nerd A Bit Nerd, construida con Next.
 - **Diseño responsive** y accesible
 - **Estética terminal nerd** con colores verde-neón, fucsia y cyan
 - **Páginas estáticas** optimizadas para SEO
+- **Navegación fluida** entre secciones de la comunidad
+- **Integración con WhatsApp** para comunicación directa
 
 ## 📁 Estructura del Proyecto
 
@@ -19,14 +21,27 @@ src/
 │   ├── globals.css          # Estilos globales con tema nerd
 │   ├── layout.tsx           # Layout principal con header y footer
 │   ├── page.tsx             # Página principal (landing)
-│   ├── manifiesto/
+│   ├── manifest/
 │   │   └── page.tsx         # Página del manifiesto
-│   └── mision/
-│       └── page.tsx         # Página de misión, visión y valores
+│   ├── mision/
+│   │   └── page.tsx         # Página de misión, visión y valores
+│   ├── wellbeing/
+│   │   └── page.tsx         # Página de bienestar
+│   ├── entertainment/
+│   │   └── page.tsx         # Página de entretenimiento
+│   ├── programming/
+│   │   └── page.tsx         # Página de programación
+│   ├── crypto/
+│   │   └── page.tsx         # Página de crypto
 ├── components/
-│   ├── Header.tsx           # Componente de navegación
-│   └── Footer.tsx           # Componente de footer
+│   ├── Navigation.tsx       # Componente de navegación
+│   ├── Header.tsx           # Componente del header
+│   ├── Footer.tsx           # Componente de footer
+│   ├── Donations.tsx        # Componente de donaciones
+│   ├── Sponsors.tsx         # Componente de patrocinadores
+│   └── WhatsAppFloat.tsx    # Botón flotante de WhatsApp
 public/
+├── manifest.json            # Manifest de la aplicación
 └── robots.txt               # Configuración para crawlers
 ```
 
@@ -64,8 +79,24 @@ npm run lint
 ## 📱 Páginas Incluidas
 
 1. **Landing Page** (`/`) - Página principal con presentación de la comunidad
-2. **Manifiesto** (`/manifiesto`) - Los principios y valores de A Bit Nerd
+2. **Manifiesto** (`/manifest`) - Los principios y valores de A Bit Nerd
 3. **Misión** (`/mision`) - Misión, visión y valores detallados
+4. **Bienestar** (`/wellbeing`) - Salud mental y bienestar de la comunidad
+5. **Entretenimiento** (`/entertainment`) - Escape rooms, puzzles y entretenimiento nerd
+6. **Programación** (`/programming`) - Desarrollo de software y proyectos de código
+7. **Crypto** (`/crypto`) - Criptomonedas, blockchain y tecnologías descentralizadas
+
+## 🧭 Flujo de Navegación
+
+La aplicación incluye un sistema de navegación secuencial entre páginas:
+
+- **Manifiesto** → Explorar Misión (`/mision`)
+- **Bienestar** → Explorar Entretenimiento (`/entertainment`)  
+- **Entretenimiento** → Explorar Programación (`/programming`)
+- **Programación** → Explorar Crypto (`/crypto`)
+- **Crypto** → Explorar Manifiesto (`/manifest`)
+
+Cada página incluye botones de "Explorar" que guían al usuario hacia la siguiente sección relevante, creando un flujo natural de descubrimiento del contenido.
 
 ## 🔧 Configuración
 
